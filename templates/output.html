@@ -12,11 +12,29 @@
         /* Custom styles to adjust image dimensions */
         .output-image {
             width: 100%; /* Increase width to fill the container */
-            height: 400px; /* Set a fixed height to decrease it */
-            object-fit: cover; /* Ensure the image covers the area without transparency */
+            height: auto; /* Set height to auto to preserve aspect ratio */
+            max-height: 400px; /* Set a maximum height */
+            object-fit: contain; /* Ensure the image fits within the area */
             max-width: 800px; /* Set a maximum width for the image */
             border-radius: 0; /* Remove border radius */
-            background-color: white; /* Set background color to white */
+            background-color: transparent; /* Set background color to transparent */
+            margin: 0; /* Remove margin around the image */
+            padding: 0; /* Remove padding around the image */
+        }
+
+        /* Custom styles to center the container */
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Set height to 100% of the viewport */
+            background-color: transparent; /* Ensure the container has no background */
+        }
+
+        .btn {
+            pointer-events: auto; /* Ensure pointer events are enabled */
+            z-index: 10; /* Bring the button above other elements */
         }
     </style>
 </head>
@@ -32,10 +50,10 @@
     </header>
 
     <h1 class="mt-5 mb-4 text-center">Processed Image</h1>
-    <div class="container text-center">
+    <div class="container">
         <img src="{{ url_for('static', filename='output.png') }}" alt="Output Image" class="output-image mb-4">
-        <p class="lead">Here is your processed image!</p>
-        <a href="{{ url_for('home') }}" class="btn btn-primary">Upload Another Image</a>
+        <p class="lead text-center">Here is your processed image!</p>
+        <a href="http://127.0.0.1:5000/" class="btn btn-primary">Upload Another Image</a> <!-- Absolute URL for navigation -->
     </div>
 
     <div id="stars1">
