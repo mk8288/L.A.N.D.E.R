@@ -70,8 +70,8 @@ def upload():
     filename = secure_filename(pic.filename)
     pic.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-    # Redirect to loading page to show loading message
-    return redirect(url_for('loading'))
+    # Redirect to loading page to show loading message with the filename
+    return redirect(url_for('loading', filename=filename))
 
 @app.route('/loading')
 def loading():
@@ -84,8 +84,11 @@ def loading():
     # Choose a random AI theme to display
     ai_theme = random.choice(AI_THEMES)
     
-    # Pass the random theme to the output page
-    return render_template('output.html', ai_theme=ai_theme)
+    # Get the filename from the query parameter
+    filename = request.args.get('filename')
+
+    # Pass the random theme and filename to the output page
+    return render_template('output.html', ai_theme=ai_theme, filename=filename)
 
 @app.route('/output')
 def output():
