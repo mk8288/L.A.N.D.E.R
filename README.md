@@ -20,32 +20,18 @@ This map will be used for safely navigating a lander. The challenge also include
 ## Walkthrough Filesystem
 
 - **`model.py`** : Contains the model architecture for SRGAN.
-- **`train_srgan.py`** : Script to train the SRGAN model from scratch or continue training.
+- **`g.npz`** : Pretrained weight of the models.
 - **`generate_srgan.py`** : Script to generate a 16x superscaled image from a TMC2 image using the trained model.
-- **`evaluation.py`** : Script to evaluate the 16x upsampled data using the SSIM evaluation metric with test OHRC data.
 - **`srgan_config.py`** : Configuration file for training, generating, and evaluation parameters.
-- **`dataset.py`** : Handles creating batches of tensors for training or testing using a DataLoader.
-- **`image_quality_assessment.py`** : Contains code for evaluation metrics like SSIM, PSNR, etc.
+- **`sam.py`**: Implements the Spectral Angle Mapper (SAM) function to calculate the angular similarity between predicted and original images for evaluating image quality.
 - **`requirements.txt`** : Lists environment dependencies.
 - **`cascade.py`** : An earlier version of the generation script (`generate_srgan.py`).
+- **`utils.py`**: Contains utility functions for loading model state, saving checkpoints, and tracking training progress with metrics such as averages and summaries.
 
-### Directory Structure
 
-- **`train_data/`** : Directory to store training data.
-- **`pretrained_weights/`** : Directory to store pretrained weights.
-- **`results/`** : Directory where the best and latest generator and discriminator weights are saved during training.
-- **`samples/`** : Directory where logs and per-epoch weights are stored.
+## Pretrained Models
 
----
-
-## Pretrained Weights
-
-- **Generator (g_model)**: `g_last.pth.tar`
-- **Discriminator (d_model)**: `d_last.pth.tar`
-  
-These weights can be used for further training on custom datasets.
-
-- **Best Generator Weights**: `g_best.pth.tar`
+- **Generator Model**: `g.npz`
 
 ---
 
@@ -65,7 +51,6 @@ All configurations for training, testing, and evaluation can be modified in the 
 1. Modify the `srgan_config.py` file:
    - Line 29: Change `mode` to `'generate'`.
    - Line 31: Change `exp_name` to a new experiment name.
-   - Line 102: Set `g_model_weights_path` to `./pretrained_models/generate/g_best.pth.tar`.
    
 2. The input low-resolution files should have dimensions AxA, where A is a multiple of 24. Store these files in `./generate_data/TMC2/dim_1x`.
 
@@ -84,7 +69,7 @@ Modify the `srgan_config.py` file.
 - line 29: `mode` change to `evaluate`.
 
 ```bash
-python evaluation.py
+python app.py
 ```
 
 - this unzipped folder can also be used to run evaluation over other metrics
