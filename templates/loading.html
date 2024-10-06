@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='teamstyle.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #loadingBar {
+            width: 0;
+            height: 30px;
+            background-color: #007bff;
+        }
+        #progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="http://127.0.0.1:5000/" class="logo">NASA</a>
+        <ul>
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/team">Team</a></li>
+        </ul>
+    </header>
+
+    <div class="container mt-5 text-center">
+        <h1>Loading...</h1>
+        <div id="progress" class="mt-4">
+            <div id="loadingBar"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var width = 0;
+            var interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    // After loading, redirect to the output page
+                    window.location.href = "{{ url_for('output') }}";
+                } else {
+                    width++;
+                    $('#loadingBar').css('width', width + '%');
+                }
+            }, 100); // Update the loading bar every 100 ms
+        });
+    </script>
+</body>
+
+</html>
+

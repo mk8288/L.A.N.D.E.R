@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link href="{{ url_for('static', filename='homestyle.css') }}" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="http://127.0.0.1:5000/" class="logo">NASA</a>
+            <ul>
+                <li><a href="http://127.0.0.1:5000/" class="active">Home</a></li>
+                <li><a href="http://127.0.0.1:5000/about">About</a></li>
+                <li><a href="http://127.0.0.1:5000/team">Team</a></li>
+            </ul>
+        </header>
+        <div class="chandravikas">
+            <h2>L.A.N.D.E.R</h2>
+        </div>
+        <section>
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars1">
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars2">
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars3">
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars4">
+            <!---
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars5">
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars6">
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars7">
+            <img src="{{ url_for('static', filename='clouds.png') }}" id="clouds1">
+            -->
+            <img src="{{ url_for('static', filename='moon.png') }}" id="moon">
+            <img src="{{ url_for('static', filename='spaceship.png') }}" id="spaceship">
+            <div class="floating">
+                <img src="{{ url_for('static', filename='hazard_map.png') }}" id="hazardmap">
+            </div>
+            <div class="aifloating">
+                <img src="{{ url_for('static', filename='ai_model.png') }}" id="aimodel">
+            </div>
+            <img src="{{ url_for('static', filename='gsl.jpg') }}" id="spaceshipland">
+        </section>
+        <div class="main">
+            <h3>Hazard Mapping for Lunar Navigation</h3><br>
+            <p>
+                In the exploration of extraterrestrial surfaces like the Moon, ensuring safe navigation <br> and landing techniques for spacecraft
+                are pivotal challenges. Hazard mapping plays <br> a critical role in this pursuit, serving as an indispensable tool for identifying
+                potential <br> risks and obstacles on lunar terrain.<br><br>
+            </p>
+            <br>
+            <h3>Understanding Hazard Maps</h3><br>
+            <p>
+                A hazard map is a comprehensive representation of potential threats or hazards <br> present within a specific area. In the context of
+                lunar exploration, it delineates <br> geographical features that may pose risks to landing spacecraft, such as craters, <br> boulders, and
+                uneven terrains. These maps are instrumental in ensuring the <br> safety and success of missions by providing crucial insights into
+                the lunar surface's <br> conditions.<br>
+            </p><br><br>
+            <h3>Importance in Lunar Navigation</h3><br>
+            <p>
+                Safe landing on the Moon requires meticulous planning and an in-depth <br> understanding of its surface characteristics. Hazard maps facilitate this by:<br>
+                <br>
+                <ul>
+                    <li>Identifying Potential Obstacles: By highlighting hazardous areas such as <br> craters and boulders, hazard maps aid in route planning and <br> decision-making during lunar descent.</li>
+                    <br><li>Enhancing Navigation Safety: They enable spacecraft operators to navigate <br> and select landing sites with greater precision, avoiding unsafe areas and <br> potential landing hazards.</li>
+                    <br><li>Mitigating Risks: Understanding the terrain helps in developing strategies <br> to mitigate risks and ensure the safety of equipment and crew during landing <br> operations.</li>
+                </ul>
+            </p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h3>The Role of AI in Hazard Mapping</h3>
+            <p>
+                Utilizing advancements in artificial intelligence (AI) and image processing, modern <br> hazard mapping techniques leverage AI models to analyze lunar surface imagery. <br> These models can detect and 
+                identify potential hazards within uploaded images, <br> enabling a more accurate and real-time assessment of landing site safety.<br><br>
+            </p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h3>Upload Lunar Surface Image for Hazard Mapping</h3><br>
+            <p>
+                For a comprehensive hazard analysis of lunar terrain, you're invited to upload <br> an image of the lunar surface. Our AI-driven system will process the image to <br> detect craters, 
+                boulders, and potential hazards, providing an output image <br> showcasing identified hazards and a hazard map. This information is crucial <br> for ensuring a safer navigation plan 
+                for spacecraft. Simply upload your image <br> to visualize potential obstacles and aid in safer space exploration.
+            </p>
+        </div>
+        <form action="http://127.0.0.1:5000/upload" enctype="multipart/form-data" method="POST"> 
+            <div id="ImageContainer">
+                Upload Image
+            </div>
+            <label for="uploadInput" class="custom-file-input">
+                Upload
+            </label>
+            <input type="file" name="pic" style="display: none;" id="uploadInput" accept="image/*"/>
+            <label for="submitInput" class="custom-file-submit">
+                Submit
+            </label>
+            <input type="submit" value="Submit" style="display: none;" id="submitInput"/>
+         </form>
+         <script>
+             $(document).ready(function(){
+            $("#uploadInput").change(function(){
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var imgSrc = e.target.result;
+                        $('#ImageContainer').html('<img src="' + imgSrc + '">');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+         </script>
+        <script>
+            let stars1 = document.getElementById('stars1');
+            let stars2 = document.getElementById('stars2');
+            let stars3 = document.getElementById('stars3');
+            let stars4 = document.getElementById('stars4');
+
+            /*
+            let stars5 = document.getElementById('stars5');
+            let stars6 = document.getElementById('stars6');
+            let stars7 = document.getElementById('stars7');
+            */
+
+            let chandravikas = document.querySelector('.chandravikas');
+
+            let moon = document.querySelector('section img#moon');
+
+            let spaceship = document.querySelector('section img#spaceship');
+
+            let stars1speedmultiplier = 0.1;
+            let stars2speedmultiplier = 0.075;
+            let stars3speedmultiplier = 0.05;
+            let stars4speedmultiplier = 0.025;
+
+            /*
+            let stars5speedmultiplier = 0.0125;
+            let stars6speedmultiplier = 0.0125;
+            let stars7speedmultiplier = 0.0125;
+            let starsopacitymultiplier = 0.000125;
+            */
+
+            let stars1sizemultiplier = 0.0075;
+            let stars2sizemultiplier = 0.0075;
+            let stars3sizemultiplier = 0.0075;
+            let stars4sizemultiplier = 0.0075;
+
+            let stars1speedmultiplier2 = 0.01;
+            let stars2speedmultiplier2 = 0.01;
+            let stars3speedmultiplier2 = 0.01;
+            let stars4speedmultiplier2 = 0.01;
+
+            let chandravikastextsizemultiper = 0.0075;
+            let chandravikastextopacitymultiper = 0.002;
+            let chandravikastextleftmultiper = 0.05;
+
+            let moonrightmultiplier = 2;
+            let moontopmultiplier = 0.1;
+
+            let moonsizewidthmultipier = .6;
+            let moonsizeheightmultipier = .5;
+            let moonsizetopmultipier = 0.1;
+            let moonsizerightmultipier = 0.25;
+
+            let moonsizewidthmultipier2 = .06;
+            let moonsizeheightmultipier2 = .05;
+            let moonsizetopmultipier2 = 0.12;
+            let moonsizerightmultipier2 = 0.025;
+
+            let spaceshipsizewidthmultiplier = 0;
+            let spaceshipsizeheightmultiplier = 0;
+            let spaceshipsizetopmultiplier = -0.01;
+            let spaceshipsizerightmultiplier = -.0075 ;
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                if (value < 850){
+                    stars1.style.left = value * stars1speedmultiplier + 'px';
+                    stars2.style.left = value * stars2speedmultiplier + 'px';
+                    stars3.style.left = value * stars3speedmultiplier + 'px';
+                    stars4.style.left = value * stars4speedmultiplier + 'px';
+                }
+                chandravikas.style.fontSize = 2.5 + (value * chandravikastextsizemultiper) + 'vw';
+                chandravikas.style.opacity = 1 - (value * chandravikastextopacitymultiper);
+                chandravikas.style.left = 35 - (value * chandravikastextleftmultiper) + '%';
+                if (value >= 500 && value < 850) {
+                    moon.style.left = -600 + ((value - 500) * moonrightmultiplier) + 'px';
+                    moon.style.top = 150 - ((value - 700) * moontopmultiplier) + 'vh';
+                }
+                if (value >= 850 && value <1554){
+                    moon.style.width = 666 - ((value - 850) * moonsizewidthmultipier) + 'px';
+                    moon.style.height = 539 - ((value - 850) * moonsizeheightmultipier) + 'px';
+                    moon.style.top = 135 + ((value - 850) * moonsizetopmultipier) + 'vh';
+                    moon.style.left = 100 + ((value - 850) * moonsizerightmultipier) + 'px';
+
+                    stars1.style.width = 142.5 - ((value - 850) * stars1sizemultiplier) + 'vw';
+                    stars2.style.width = 142.5 - ((value - 850) * stars2sizemultiplier) + 'vw';
+                    stars3.style.width = 142.5 - ((value - 850) * stars3sizemultiplier) + 'vw';
+                    stars4.style.width = 142.5 - ((value - 850) * stars4sizemultiplier) + 'vw';
+
+
+                    stars1.style.left = 85 + ((value-850)) * stars1speedmultiplier2 + 'px';
+                    stars2.style.left = 63.75 + ((value-850)) * stars1speedmultiplier2 + 'px';
+                    stars3.style.left = 42.5 + ((value-850)) * stars1speedmultiplier2 + 'px';
+                    stars4.style.left = 21.25 + ((value-850)) * stars1speedmultiplier2 + 'px';
+                }
+                if (value>=1254){
+                    spaceship.style.width = 630 - ((value - 1554) * spaceshipsizewidthmultiplier) + 'px';
+                    spaceship.style.height = 644.25 - ((value - 1554) * spaceshipsizeheightmultiplier) + 'px';
+                    spaceship.style.top = 275 + ((value - 1554) * spaceshipsizetopmultiplier) + 'vh';
+                    spaceship.style.left = 40 + ((value - 1554) * spaceshipsizerightmultiplier) + '%';
+
+                    /*
+                    stars5.style.left = value * stars5speedmultiplier + 'px';
+                    stars6.style.left = value * stars6speedmultiplier + 'px';
+                    stars7.style.left = value * stars7speedmultiplier + 'px';
+                    stars5.style.opacity = 1 - (value * starsopacitymultiplier);
+                    stars6.style.opacity = 1 - (value * starsopacitymultiplier);
+                    stars7.style.opacity = 1 - (value * starsopacitymultiplier);
+                    */
+                }
+            })
+        </script>
+    </body>
+</html>

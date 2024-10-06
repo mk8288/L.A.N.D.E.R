@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='aboutstyle.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="http://127.0.0.1:5000/" class="logo">NASA</a>
+        <ul>
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/about" class="active">About</a></li>
+            <li><a href="http://127.0.0.1:5000/team">Team</a></li>
+        </ul>
+    </header>
+    <div class="usecase">
+        <h2>USE CASES</h2>
+    </div>
+    <div id="stars1">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars1r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars3">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars3r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars4">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars4r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars4">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars4r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars5">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars5r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div class="main">
+        <section>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ url_for('static', filename='Nav and Obstacle Avoidance.jpg') }}" alt="Image 1" class="img-fluid mx-auto d-block">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3>Use Case 1: <span>Navigating and Obstacle Avoidance</span></h3>
+                    <p>
+                         The hazard map, <u>continuously updated in real-time</u>, acts as the digital eyes of lunar
+                        landers.
+                        It
+                        <u>identifies hazardous terrain features</u>, ensuring that the <u>lander avoids rough or unsafe
+                            areas
+                            during its
+                            descent and landing phases</u>. Additionally, during surface navigation, the map assists in
+                        <u>identifying
+                            obstacles</u>, such as large rocks or craters, allowing the lander to adjust its route,
+                        avoiding
+                        potential
+                        collisions.
+                    </p>
+                    <p>
+                        • <u><span>Impacts</span></u>: <u>Precise navigation and obstacle avoidance</u> are paramount
+                        for the
+                        safety of the mission.
+                        By avoiding hazardous terrain and obstacles, the lander ensures a stable landing, protecting
+                        both
+                        equipment and astronauts. This use case's impact reverberates throughout the mission, ensuring
+                        the
+                        success of subsequent exploration activities.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br>
+        <section>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='Landers and Rovers.jpg') }}" alt="Image 2" class="img-fluid mx-auto d-block"
+                        style="height: 15rem;">
+                </div>
+                <div class="col-md-6">
+                    <h3>Use Case 2: <span>Lunar Landers and Rovers</span></h3>
+                    <p>
+                         For <u>lunar landers</u>, the hazard map is invaluable in <u>selecting the landing site</u>.
+                        It
+                        evaluates the
+                        terrain, ensuring a flat and stable surface, minimizing risks during landing. For <u>rovers</u>,
+                        the
+                        <u>map guides
+                            their path</u>, ensuring they explore scientifically valuable areas. The map <u>aids in
+                            identifying
+                            unique
+                            geological formations</u>, enabling targeted scientific investigations.
+                    </p>
+                    <p>
+                        • <u><span>Impacts</span></u>: <u>Efficient landing and strategic exploration</u> maximize the
+                        scientific output of lunar
+                        missions. By landing in optimal locations and exploring specific sites of interest, scientists
+                        can
+                        gather diverse data, deepening our understanding of lunar geology, composition, and evolution.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br>
+        <section>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ url_for('static', filename='planetary science and exploration.webp') }}" alt="Image 1"
+                        class="img-fluid mx-auto d-block">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3>Use Case 3: <span>Planetary Science and Exploration</span></h3>
+                    <p>
+                         Planetary scientists rely on the hazard map <u>to study specific lunar features</u>. It
+                        <u>aids in
+                            selecting
+                            research sites</u>, allowing scientists to explore areas rich in particular minerals or
+                        geological
+                        formations. Scientists can conduct in-depth analyses of these sites, unravelling the Moon's
+                        geological
+                        history.
+                    </p>
+                    <p>
+                        • <u><span>Impacts</span></u>: <u>Enhanced research opportunities lead to groundbreaking
+                            discoveries</u>. Detailed studies
+                        of lunar features provide insights not only into the Moon's history but also into broader
+                        planetary
+                        processes. These discoveries contribute to our understanding of celestial bodies, planetary
+                        formation,
+                        and the conditions necessary for life.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br>
+        <section>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='robotic missions.jpg') }}" alt="Image 2" class="img-fluid mx-auto d-block"
+                        style="height: 15rem;">
+                </div>
+                <div class="col-md-6">
+                    <h3>Use Case 4: <span>Robotic Missions</span></h3>
+                    <p>
+                         Autonomous robotic missions utilize the hazard map to make <u>real-time decisions</u>. When
+                        <u>faced
+                            with
+                            unexpected terrain challenges, the map guides the robots in finding alternate routes</u>.
+                        The robots
+                        can
+                        <u>also identify and study interesting surface features</u>, such as rare minerals, <u>without
+                            human
+                            intervention</u>.
+                    </p>
+                    <p>
+                        • <u><span>Impacts</span></u>: Increased mission autonomy <u>allows robots to adapt and explore
+                            challenging terrains
+                            independently</u>. This autonomy optimizes mission efficiency, as robots can continue
+                        gathering
+                        valuable
+                        data even in complex and hazardous lunar landscapes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br>
+        <section>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ url_for('static', filename='lunar map img res.jpg') }}" alt="Image 1" class="img-fluid mx-auto d-block">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3>Use Case 5: <span>Lunar Map Image Resolution</span></h3>
+                    <p>
+                         <u>Higher-resolution lunar maps provide a wealth of data</u>. Scientists can zoom in on
+                        specific
+                        features,
+                        craters and boulders, at a microscopic level. This level of detail aids in identifying mineral
+                        compositions, erosion patterns, and even potential areas for future human habitation.
+                    </p>
+                    <p>
+                        • <u><span>Impacts</span></u>: Enhanced image resolution facilitates <u>precise geological
+                            analysis</u>,
+                        enabling scientists
+                        to conduct in-depth studies. This level of granularity is essential for comprehensive scientific
+                        investigations, shedding light on the Moon's geological, volcanic, and tectonic history in
+                        unprecedented
+                        detail.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        let usecase = document.querySelector('.usecase h2');
+
+        let usecasetextsizemultiper = 0.0075;
+        let usecasetextopacitymultiper = 0.002;
+        let usecasetextleftmultiper = 0.025;
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            usecase.style.fontSize = 4 + (value * usecasetextsizemultiper) + 'vw';
+            usecase.style.opacity = 1 - (value * usecasetextopacitymultiper);
+            usecase.style.left = 37.5 - (value * usecasetextleftmultiper) + '%';
+        })
+
+    </script>
+</body>
+
+</html>

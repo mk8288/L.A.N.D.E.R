@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.come/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 500vh;
+    margin: 20px;
+    text-align: justify;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055, #000000, #000000, #000000, #000000, #2b1055);
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 3vw;
+    text-transform: uppercase;
+    letter-spacing: 0.5vw;
+}
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 2.5vw;
+}
+header ul li a
+{
+    text-decoration: none;
+    padding: 0.5vw 1vw;
+    color: #fff;
+    border-radius: 2.5vw;
+}
+header ul li a:hover,
+header ul li a.active
+{
+    background: #fff;
+    color: #2b1055;
+}
+
+.usecase h2
+{   
+    position: absolute;
+    color: #fff;
+    top: 50vh;
+    left: 37.5%;
+    font-size: 4vw;
+    font-weight: 700;
+    z-index: 9;
+    opacity: 1;
+}
+
+.main h1
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.main
+{
+    position: absolute;
+    top: 100vh;
+    padding: 100px;
+
+    animation-name: textfloating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes textfloating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0px, 5px); }
+    100%   { transform: translate(0px, -0px); }    
+}
+
+.main h2
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.main h3
+{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #e38d69;
+}
+.main u {
+    color: rgb(111, 171, 255);
+}
+.main u span {
+    color: #cb69fc;
+}
+.main h3 span {
+    color: #fe82ba
+}
+.main p
+{
+    font-size: 1.2em;
+    color: #fff;
+}
+.main li
+{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+#stars1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars1 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars1r {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars1r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloatingr 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloatingr {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#stars2 {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars2 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating2 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating2 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars2r {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars2r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating2r 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating2r {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#stars3 {
+    position: absolute;
+    top: 200vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars3 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating3 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating3 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars3r {
+    position: absolute;
+    top: 200vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars3r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating3r 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating3r {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#stars4 {
+    position: absolute;
+    top: 300vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars4 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating4 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating4 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars4r {
+    position: absolute;
+    top: 300vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars4r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating4r 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating4r {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#stars5 {
+    position: absolute;
+    top: 400vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars5 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating5 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating5 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars5r {
+    position: absolute;
+    top: 400vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars5r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating5r 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating5r {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#stars6 {
+    position: absolute;
+    top: 500vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars6 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating6 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating6 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars6r {
+    position: absolute;
+    top: 500vh;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars6r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating6r 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating6r {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

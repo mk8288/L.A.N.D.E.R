@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='teamstyle.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Custom styles to adjust image dimensions */
+        .output-image {
+            width: 100%; /* Increase width to fill the container */
+            height: 400px; /* Set a fixed height to decrease it */
+            object-fit: cover; /* Ensure the image covers the area without transparency */
+            max-width: 800px; /* Set a maximum width for the image */
+            border-radius: 0; /* Remove border radius */
+            background-color: white; /* Set background color to white */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="http://127.0.0.1:5000/" class="logo">NASA</a>
+        <ul>
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/team">Team</a></li>
+        </ul>
+    </header>
+
+    <h1 class="mt-5 mb-4 text-center">Processed Image</h1>
+    <div class="container text-center">
+        <img src="{{ url_for('static', filename='output.png') }}" alt="Output Image" class="output-image mb-4">
+        <p class="lead">Here is your processed image!</p>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Upload Another Image</a>
+    </div>
+
+    <div id="stars1">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars1r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+</body>
+
+</html>
+

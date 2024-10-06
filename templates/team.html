@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='teamstyle.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="http://127.0.0.1:5000/" class="logo">NASA</a>
+        <ul>
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/team" class="active">Team</a></li>
+        </ul>
+    </header>
+    <h1 class="mt-5 mb-4 text-center">Our Team</h1>
+    <div id="stars1">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars1r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div id="stars2r">
+        <img src="{{ url_for('static', filename='stars.png') }}">
+    </div>
+    <div class="container">
+
+        <!-- Team Members -->
+        <h2 class="text-center mb-4">Team Members</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='kaif.png') }}" alt="Mohammad Kaif">
+                    <h3>Mohammad Kaif</h3>
+                    <p>Team Leader</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='rishabh.jpg') }}" alt="Rishabh Singh">
+                    <h3>Rishabh Singh</h3>
+                    <p>Team Member</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='aviral.jpg') }}" alt="Aviral Saxena">
+                    <h3>Aviral Saxena</h3>
+                    <p>Team Member</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

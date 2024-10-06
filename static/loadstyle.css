@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.come/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    margin: 20px;
+    text-align: justify;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: linear-gradient(#2b1055, #000000, #2b1055);
+}
+.loading h2
+{   
+    position: absolute;
+    color: #fff;
+    top: 45vh;
+    left: 40%;
+    font-size: 4vw;
+    font-weight: 700;
+    z-index: 9;
+    opacity: 1;
+}
+#stars1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars1 img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloating 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloating {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#stars1r {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+
+#stars1r img {
+    max-width: 100%; /* Set maximum width to 100% of container */
+    max-height: 100%; /* Set maximum height to 100% of container */
+    width: auto; /* Allow the width to adjust proportionally */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure proper block-level display */
+    margin: auto; /* Center the images */
+    animation: starfloatingr 60s infinite linear; /* Apply animation to the image */
+}
+
+@keyframes starfloatingr {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
